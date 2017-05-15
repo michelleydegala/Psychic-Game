@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Psychic Game!</title>
+  </head>
+  <body>
+
+    <div id="game">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+       <div class="jumbotron">
+  <h3>Psychic Game</h3>
+  <p><h4>Press a number between 1 and 5 to guess what I'm thinking!</h4>
+</div>
+</div>
+
+    <script type="text/javascript">
+
+      var computerChoices = ["1", "2", "3", "4", "5"];
+
+      var wins = 0;
+      var losses = 0;
+      var ties = 0;
+      // var guesses = 0;
+
+      document.onkeyup = function(event) {
+
+        var userGuess = event.key;
+
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+        if (
+          (userGuess === "1") || 
+          (userGuess === "2") ||
+          (userGuess === "3") ||
+          (userGuess === "4") ||
+          (userGuess === "5")) {
+
+          if ((userGuess === "1") && (computerGuess === "2")) {
+            wins++;
+          }
+          else if ((userGuess === "1") && (computerGuess === "2")) {
+            losses++;
+          }
+          else if ((userGuess === "1") && (computerGuess === "3")) {
+            losses++;
+          }
+          else if ((userGuess === "1") && (computerGuess === "4")) {
+            wins++;
+          }
+          else if ((userGuess === "1") && (computerGuess === "5")) {
+            wins++;
+          }
+          else if ((userGuess === "2") && (computerGuess === "1")) {
+            losses++;
+          }
+          else if ((userGuess === "2") && (computerGuess === "3")) {
+            losses++;
+          }
+          else if ((userGuess === "2") && (computerGuess === "4")) {
+            losses++;
+          }
+          else if ((userGuess === "2") && (computerGuess === "5")) {
+            wins++;
+          }
+          else if ((userGuess === "3") && (computerGuess === "1")) {
+            losses++;
+          }
+          else if ((userGuess === "3") && (computerGuess === "2")) {
+            losses++;
+          }
+          else if ((userGuess === "3") && (computerGuess === "4")) {
+            wins++;
+          }
+          else if ((userGuess === "3") && (computerGuess === "5")) {
+            wins++;
+          }
+          else if ((userGuess === "4") && (computerGuess === "1")) {
+            losses++;
+          }
+          else if ((userGuess === "4") && (computerGuess === "2")) {
+            losses++;
+          }
+          else if ((userGuess === "4") && (computerGuess === "3")) {
+            losses++;
+          }
+          else if ((userGuess === "4") && (computerGuess === "5")) {
+            wins++;
+          }
+          else if ((userGuess === "5") && (computerGuess === "1")) {
+            losses++;
+          }
+          else if ((userGuess === "5") && (computerGuess === "2")) {
+            losses++;
+          }
+          else if ((userGuess === "5") && (computerGuess === "3")) {
+            wins++;
+          }
+          else if ((userGuess === "5") && (computerGuess === "4")) {
+            wins++;
+          }
+          else if (userGuess === computerGuess) {
+            ties++;
+          }
+
+
+          var html = 
+          "<p>Press a number between 1 and 5 to guess the number!</p>" +
+          "<p>You read my mind! Wins: " + wins + "</p>" +
+          "<p>You couldn't read my mind! Losses: " + losses + "</p>" +
+          "<p>We were reading each others mind!  Tied: " + ties + "</p>";
+
+            //       comments = function () {
+  //       showGuesses.innerHTML = "You have " + guesses + "guesses left.";
+  //       if (guesses < 1) {
+  //         showGuesses.innerHTML = "Game Over";
+  //       }
+  //       for (var i = 0; i < guesses.length; i++) {
+  //         if (counter + space === guesses.length) {
+  //       showGuesses.innerHTML = "You Win!";
+  //     }
+  //   }
+  // }
+
+          document.querySelector("#game").innerHTML = html;
+
+        }
+      };
+
+    </script>
+
+  </body>
+</html>
